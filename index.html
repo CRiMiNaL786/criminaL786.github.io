@@ -1,40 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Amaan (@criminal786) — Also Known As Amaan The Gamer King. Connect on GitHub, YouTube, Telegram, X, and Instagram." />
-  <title>Amaan (@criminal786) | Profile</title>
-  <link rel="icon" href="https://telegra.ph/file/090885a3f14cb67c33c5b.jpg" type="image/jpeg" />
+  <meta name="description" content="Amaan (@criminal786) — Also Known As Amaan The Gamer King." />
+  <title>@criminal786 | Amaan The Gamer King</title>
+  <link rel="icon" href="https://github.com/criminal786.png" type="image/png" />
   <script>
-    // Apply saved or system theme before paint to prevent flicker
     (function () {
       const saved = localStorage.getItem('theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+      if (saved === 'dark' || saved === 'light') {
+        document.documentElement.setAttribute('data-theme', saved);
+      }
     })();
   </script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <main class="page-wrapper">
+  <!-- Top Anime Hero Banner (loads img/lbg.jpg & img/dbg.jpg via style.css) -->
+  <header class="hero-banner">
+    <!-- Custom Sun/Cloud <-> Moon/Stars Pill Toggle -->
+    <button
+      type="button"
+      class="theme-switch"
+      id="themeToggle"
+      role="switch"
+      aria-checked="false"
+      aria-label="Toggle dark mode"
+      title="Switch Water / Flame mode"
+    >
+      <span class="switch-track">
+        <!-- Stars (visible in Dark / Flame mode) -->
+        <span class="star star-1"></span>
+        <span class="star star-2"></span>
+        <span class="star star-3"></span>
+
+        <!-- Thumb (Sun in Light mode, Moon in Dark mode) -->
+        <span class="switch-thumb">
+          <span class="crater crater-1"></span>
+          <span class="crater crater-2"></span>
+        </span>
+
+        <!-- Cloud (visible in Light / Water mode) -->
+        <span class="cloud"></span>
+      </span>
+    </button>
+  </header>
+
+  <!-- Main Profile Card -->
+  <main class="page-container">
     <article class="profile-card" aria-label="Profile Card">
-      <!-- Top Banner & Controls -->
-      <header class="card-header">
-        <div class="top-bar">
+      <!-- Curved Colored Top Section -->
+      <div class="card-top">
+        <div class="card-nav">
           <div class="menu-wrapper">
             <button
               type="button"
-              class="icon-btn"
+              class="nav-icon-btn"
               id="menuToggle"
               aria-expanded="false"
               aria-controls="navDropdown"
-              aria-label="Toggle social links menu"
+              aria-label="Open links menu"
             >
-              <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round">
-                <line x1="4" y1="7" x2="20" y2="7" />
-                <line x1="4" y1="12" x2="20" y2="12" />
-                <line x1="4" y1="17" x2="20" y2="17" />
+              <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round">
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
               </svg>
             </button>
 
@@ -42,98 +73,70 @@
               <a href="https://github.com/criminal786" target="_blank" rel="noopener noreferrer">GitHub</a>
               <a href="https://t.me/criminal786" target="_blank" rel="noopener noreferrer">Telegram</a>
               <a href="https://www.youtube.com/@amaanthegamerking" target="_blank" rel="noopener noreferrer">YouTube</a>
-              <a href="https://twitter.com/AMaaNTGK" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+              <a href="https://twitter.com/AMaaNTGK" target="_blank" rel="noopener noreferrer">Twitter</a>
               <a href="https://www.instagram.com/amaantgk" target="_blank" rel="noopener noreferrer">Instagram</a>
             </nav>
           </div>
 
-          <div class="top-actions">
-            <button
-              type="button"
-              class="icon-btn"
-              id="themeToggle"
-              aria-label="Toggle dark mode"
-              title="Switch theme"
-            >
-              <!-- Moon icon (shown in light mode) -->
-              <svg class="icon-moon" viewBox="0 0 24 24" width="19" height="19" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-              </svg>
-              <!-- Sun icon (shown in dark mode) -->
-              <svg class="icon-sun" viewBox="0 0 24 24" width="19" height="19" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="5" />
-                <line x1="12" y1="1" x2="12" y2="3" />
-                <line x1="12" y1="21" x2="12" y2="23" />
-                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-                <line x1="1" y1="12" x2="3" y2="12" />
-                <line x1="21" y1="12" x2="23" y2="12" />
-                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-              </svg>
-            </button>
-
-            <a
-              href="mailto:amaanthegamerking@gmail.com"
-              class="icon-btn"
-              aria-label="Send an email to Amaan"
-              title="Email amaanthegamerking@gmail.com"
-            >
-              <svg viewBox="0 0 24 24" width="19" height="19" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="4" width="20" height="16" rx="3" />
-                <polyline points="22,6 12,13 2,6" />
-              </svg>
-            </a>
-          </div>
+          <a
+            href="mailto:amaanthegamerking@gmail.com"
+            class="nav-icon-btn"
+            aria-label="Send email"
+            title="amaanthegamerking@gmail.com"
+          >
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2.5" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </a>
         </div>
 
-        <button type="button" class="avatar-btn" id="avatarTrigger" aria-label="Enlarge profile photo">
+        <!-- Circular Avatar with Glowing Ring & Automatic Fallback -->
+        <button type="button" class="avatar-ring" id="avatarTrigger" aria-label="View full profile photo">
           <img
             src="https://telegra.ph/file/7eaef5aa3aafa9bf9ca36.jpg"
-            alt="Amaan (@criminal786) profile picture"
-            class="avatar-img"
+            alt="@criminal786 avatar"
             onerror="this.onerror=null; this.src='https://github.com/criminal786.png';"
           />
         </button>
 
-        <h1 class="display-name">Amaan</h1>
-        <p class="handle">@criminal786</p>
-      </header>
+        <h1 class="handle">@criminal786</h1>
+      </div>
 
-      <!-- Card Content -->
-      <section class="card-body">
-        <div class="about-section">
+      <!-- Lower Card Section -->
+      <div class="card-bottom">
+        <section class="about-block">
           <h2>About</h2>
-          <p class="bio-text">Also Known As <strong>Amaan The Gamer King</strong></p>
-        </div>
+          <p class="bio">Also Known As Amaan The Gamer King</p>
+        </section>
 
-        <div class="social-links" aria-label="Social profiles">
-          <a href="https://github.com/criminal786" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+        <div class="social-row" aria-label="Social media links">
+          <a href="https://github.com/criminal786" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
               <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
             </svg>
           </a>
 
-          <a href="https://t.me/criminal786" target="_blank" rel="noopener noreferrer" aria-label="Telegram" title="Telegram">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+          <a href="https://t.me/criminal786" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
               <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
             </svg>
           </a>
 
-          <a href="https://www.youtube.com/@amaanthegamerking" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+          <a href="https://www.youtube.com/@amaanthegamerking" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
               <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
             </svg>
           </a>
 
-          <a href="https://twitter.com/AMaaNTGK" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" title="X (Twitter)">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+          <a href="https://twitter.com/AMaaNTGK" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <svg viewBox="0 0 24 24" width="21" height="21" fill="currentColor">
+              <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
             </svg>
           </a>
 
-          <a href="https://www.instagram.com/amaantgk" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <a href="https://www.instagram.com/amaantgk" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
               <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
               <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
@@ -141,46 +144,46 @@
           </a>
         </div>
 
-        <div class="cta-group">
-          <a href="https://github.com/criminal786" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-            Follow
+        <div class="action-buttons">
+          <a href="https://github.com/criminal786" target="_blank" rel="noopener noreferrer" class="btn btn-fill">
+            FOLLOW
           </a>
-          <button type="button" class="btn btn-secondary" id="moreTrigger">
-            More
+          <button type="button" class="btn btn-outline" id="moreTrigger">
+            MORE
           </button>
         </div>
-      </section>
+      </div>
     </article>
   </main>
 
-  <!-- Avatar Lightbox Modal -->
-  <dialog class="modal" id="avatarModal" aria-label="Enlarged profile photo">
-    <div class="modal-box modal-image-box">
-      <button type="button" class="modal-close" data-close aria-label="Close modal">&times;</button>
+  <!-- Avatar Preview Modal -->
+  <dialog class="modal" id="avatarModal" aria-label="Profile picture">
+    <div class="modal-inner modal-img-wrap">
+      <button type="button" class="modal-close" data-close aria-label="Close">&times;</button>
       <img
         src="https://telegra.ph/file/7eaef5aa3aafa9bf9ca36.jpg"
-        alt="Amaan (@criminal786)"
+        alt="@criminal786"
         onerror="this.onerror=null; this.src='https://github.com/criminal786.png';"
       />
     </div>
   </dialog>
 
   <!-- More Info Modal -->
-  <dialog class="modal" id="infoModal" aria-labelledby="infoModalTitle">
-    <div class="modal-box">
-      <div class="modal-header">
-        <h2 id="infoModalTitle">More About @criminal786</h2>
-        <button type="button" class="modal-close" data-close aria-label="Close modal">&times;</button>
+  <dialog class="modal" id="infoModal" aria-labelledby="infoTitle">
+    <div class="modal-inner">
+      <div class="modal-top">
+        <h2 id="infoTitle">@criminal786</h2>
+        <button type="button" class="modal-close" data-close aria-label="Close">&times;</button>
       </div>
-      <p class="modal-text">
-        Hey! I'm <strong>Amaan</strong> (also known online as <strong>Amaan The Gamer King</strong>). Check out my repositories on GitHub, gameplay &amp; modding content on YouTube, or reach out directly via Telegram or email.
+      <p>
+        Also Known As <strong>Amaan The Gamer King</strong>. Check out my projects on GitHub, gaming &amp; mod videos on YouTube, or message me on Telegram.
       </p>
-      <div class="modal-actions">
-        <a href="https://github.com/criminal786?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-          GitHub Repos
+      <div class="action-buttons">
+        <a href="https://github.com/criminal786?tab=repositories" target="_blank" rel="noopener noreferrer" class="btn btn-fill">
+          REPOS
         </a>
-        <a href="mailto:amaanthegamerking@gmail.com" class="btn btn-secondary">
-          Send Email
+        <a href="mailto:amaanthegamerking@gmail.com" class="btn btn-outline">
+          EMAIL
         </a>
       </div>
     </div>
@@ -194,18 +197,23 @@
     const avatarModal = document.getElementById('avatarModal');
     const infoModal = document.getElementById('infoModal');
 
-    // Light / Dark theme toggle
+    function syncSwitchAria() {
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      themeToggle.setAttribute('aria-checked', String(isDark));
+    }
+    syncSwitchAria();
+
     themeToggle.addEventListener('click', () => {
-      const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-      root.setAttribute('data-theme', nextTheme);
-      localStorage.setItem('theme', nextTheme);
+      const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      syncSwitchAria();
     });
 
-    // Dropdown menu toggle
     menuToggle.addEventListener('click', (e) => {
       e.stopPropagation();
-      const isOpen = navDropdown.classList.toggle('open');
-      menuToggle.setAttribute('aria-expanded', String(isOpen));
+      const open = navDropdown.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', String(open));
     });
 
     document.addEventListener('click', (e) => {
@@ -215,14 +223,13 @@
       }
     });
 
-    // Modals
     document.getElementById('avatarTrigger').addEventListener('click', () => avatarModal.showModal());
     document.getElementById('moreTrigger').addEventListener('click', () => infoModal.showModal());
 
-    document.querySelectorAll('.modal').forEach((modal) => {
-      modal.querySelector('[data-close]').addEventListener('click', () => modal.close());
-      modal.addEventListener('click', (e) => {
-        if (e.target === modal) modal.close();
+    document.querySelectorAll('.modal').forEach((m) => {
+      m.querySelector('[data-close]').addEventListener('click', () => m.close());
+      m.addEventListener('click', (e) => {
+        if (e.target === m) m.close();
       });
     });
   </script>
