@@ -6,6 +6,14 @@
   <meta name="description" content="Amaan (@criminal786) — Also Known As Amaan The Gamer King. Connect on GitHub, YouTube, Telegram, X, and Instagram." />
   <title>Amaan (@criminal786) | Profile</title>
   <link rel="icon" href="https://telegra.ph/file/090885a3f14cb67c33c5b.jpg" type="image/jpeg" />
+  <script>
+    // Apply saved or system theme before paint to prevent flicker
+    (function () {
+      const saved = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      document.documentElement.setAttribute('data-theme', saved || (prefersDark ? 'dark' : 'light'));
+    })();
+  </script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -39,17 +47,44 @@
             </nav>
           </div>
 
-          <a
-            href="mailto:amaanthegamerking@gmail.com"
-            class="icon-btn"
-            aria-label="Send an email to Amaan"
-            title="Email amaanthegamerking@gmail.com"
-          >
-            <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="2" y="4" width="20" height="16" rx="3" />
-              <polyline points="22,6 12,13 2,6" />
-            </svg>
-          </a>
+          <div class="top-actions">
+            <button
+              type="button"
+              class="icon-btn"
+              id="themeToggle"
+              aria-label="Toggle dark mode"
+              title="Switch theme"
+            >
+              <!-- Moon icon (shown in light mode) -->
+              <svg class="icon-moon" viewBox="0 0 24 24" width="19" height="19" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+              <!-- Sun icon (shown in dark mode) -->
+              <svg class="icon-sun" viewBox="0 0 24 24" width="19" height="19" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="5" />
+                <line x1="12" y1="1" x2="12" y2="3" />
+                <line x1="12" y1="21" x2="12" y2="23" />
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                <line x1="1" y1="12" x2="3" y2="12" />
+                <line x1="21" y1="12" x2="23" y2="12" />
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+              </svg>
+            </button>
+
+            <a
+              href="mailto:amaanthegamerking@gmail.com"
+              class="icon-btn"
+              aria-label="Send an email to Amaan"
+              title="Email amaanthegamerking@gmail.com"
+            >
+              <svg viewBox="0 0 24 24" width="19" height="19" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="3" />
+                <polyline points="22,6 12,13 2,6" />
+              </svg>
+            </a>
+          </div>
         </div>
 
         <button type="button" class="avatar-btn" id="avatarTrigger" aria-label="Enlarge profile photo">
@@ -130,7 +165,7 @@
     </div>
   </dialog>
 
-  <!-- More Info Modal (Replaces broken info.html) -->
+  <!-- More Info Modal -->
   <dialog class="modal" id="infoModal" aria-labelledby="infoModalTitle">
     <div class="modal-box">
       <div class="modal-header">
@@ -152,10 +187,19 @@
   </dialog>
 
   <script>
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
     const menuToggle = document.getElementById('menuToggle');
     const navDropdown = document.getElementById('navDropdown');
     const avatarModal = document.getElementById('avatarModal');
     const infoModal = document.getElementById('infoModal');
+
+    // Light / Dark theme toggle
+    themeToggle.addEventListener('click', () => {
+      const nextTheme = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', nextTheme);
+      localStorage.setItem('theme', nextTheme);
+    });
 
     // Dropdown menu toggle
     menuToggle.addEventListener('click', (e) => {
@@ -171,11 +215,10 @@
       }
     });
 
-    // Open modals
+    // Modals
     document.getElementById('avatarTrigger').addEventListener('click', () => avatarModal.showModal());
     document.getElementById('moreTrigger').addEventListener('click', () => infoModal.showModal());
 
-    // Close modals on button click or backdrop click
     document.querySelectorAll('.modal').forEach((modal) => {
       modal.querySelector('[data-close]').addEventListener('click', () => modal.close());
       modal.addEventListener('click', (e) => {
